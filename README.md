@@ -43,6 +43,8 @@ The options that middleware() accepts are:
 - baseHost (required). This is the host without the locale subdomain. If you want en.example.org, then
 this is "example.org".
 - locales (required). This is an array of the locales that you accept in your application.
+- port. If specified, redirects to a host using a specific port. If unspecified you simply get port-less
+redirects.
 - https (defaults to false). Indicates whether you're using HTTPS (and therefore redirects should be
 to https:// URIs). This *may* be autodetected in the future (if possible).
 - defaultLocale. The default locale to redirect to for requests that don't have a locale. A simple string that
