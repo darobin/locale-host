@@ -1,0 +1,14 @@
+{
+    "name":         "locale-host"
+,   "description":  "XXX"
+,   "version":      "0.0.1"
+,   "author":       "Robin Berjon <robin@berjon.com>"
+,   "dependencies": {
+    }
+,   "devDependencies": {
+        "mocha":    "*"
+    ,   "should":   "*"
+    }
+,   "repository":   "git://github.com/darobin/locale-host"
+,   "main":         "index"
+}
