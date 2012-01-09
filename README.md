@@ -67,6 +67,30 @@ current request but with the given locale in the host. Say you are visiting http
 calling req.uriWithLocale("fr") will return http://fr.example.org/foo. This is particularly useful for
 the generation of language switching menus.
 
+## Proxies
+
+If you're using a proxy server in front of your Node instance, you will want to make sure that it is
+passing on at least the original Host: header as that is required for locale-host to do its work. You
+may want to be cautious about the way in which your proxy may rewrite redirects as those could get in
+the way. For nginx, you should probably use a configuration similar to:
+
+    upstream node_app {
+            server 127.0.0.1:3000;
+    }
+
+    server {
+        listen          80;
+        server_name     example.org *.example.org;
+
+        location / {
+            # you can of course set other proxy headers as needed
+            proxy_set_header Host $http_host;
+            proxy_pass http://node_app/;
+            proxy_redirect off;
+        }
+    }
+    
+
 ## License 
 
 (The MIT License)
