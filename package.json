@@ -1,9 +1,10 @@
 {
     "name":         "locale-host"
-,   "description":  "XXX"
+,   "description":  "ExpressJS plugin to support setting the locale through the host"
 ,   "version":      "0.0.1"
 ,   "author":       "Robin Berjon <robin@berjon.com>"
 ,   "dependencies": {
+        "underscore": "=1.2.4"
     }
 ,   "devDependencies": {
         "mocha":    "*"
